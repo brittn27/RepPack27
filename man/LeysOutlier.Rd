@@ -26,6 +26,9 @@ This method assumes two independent variables and a single dependent variable.
 x <- Data$IV1
 y <- Data$IV2
 z <- Data$DV
+OriginalData <- Data
+LeysOutlier(x,y,z)
+NewData # This should get you your new dataset
 
 
 }
