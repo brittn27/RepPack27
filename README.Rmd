@@ -52,13 +52,14 @@ library(RepPack27)
 x <- RTDATA$difficulty
 y <- RTDATA$depth
 z <- RTDATA$RT
-Data <- RTDATA
+#Data <- RTDATA
 summary(Data)
 
+```
+
+```{r ANOVA output}
 # and then an ANOVA
 ANOVA2_BW(x,y,z)
-
-
 ```
 
 

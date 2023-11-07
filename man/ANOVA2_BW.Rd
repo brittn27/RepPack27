@@ -26,7 +26,7 @@ data(RTDATA)
 x <- RTDATA$difficulty
 y <- RTDATA$depth
 z <- RTDATA$RT
-Data<- RTDATA
+# Ensure your df is named 'RTDATA'
 ANOVA2_BW(x,y,z)
 
 }

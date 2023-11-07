@@ -41,17 +41,19 @@ summary(RTDATA)
 #>  Mean   :0.7758          
 #>  3rd Qu.:0.8467          
 #>  Max.   :3.5806
+Data <- RTDATA
 ```
 
 ``` r
 library(RepPack27)
-## basic example code --
+## basic example code  of summary --
+
+?ANOVA2_BW()
 
 x <- RTDATA$difficulty
 y <- RTDATA$depth
 z <- RTDATA$RT
-Data <- RTDATA
-Data=RTDATA
+#Data <- RTDATA
 summary(Data)
 #>    Picture          difficulty  depth        side     elevation  participant
 #>  Length:672         18:112     far :336   left :336   down:336   01:672     
@@ -67,6 +69,18 @@ summary(Data)
 #>  Mean   :0.7758          
 #>  3rd Qu.:0.8467          
 #>  Max.   :3.5806
+```
+
+``` r
+# and then an ANOVA
+ANOVA2_BW(x,y,z)
+#>              Df Sum Sq Mean Sq F value   Pr(>F)    
+#> x             5   4.18  0.8370  12.547 1.18e-11 ***
+#> y             1   0.14  0.1383   2.073    0.150    
+#> x:y           5   0.27  0.0546   0.818    0.537    
+#> Residuals   660  44.03  0.0667                     
+#> ---
+#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`

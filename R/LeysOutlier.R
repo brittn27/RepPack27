@@ -15,13 +15,15 @@
 #' x <- RTDATA$difficulty
 #' y <- RTDATA$depth
 #' z <- RTDATA$RT
-#' Data<- RTDATA
+
+#' # Ensure your df is named 'RTDATA'
+
 #' ANOVA2_BW(x,y,z)
 #'
 ANOVA2_BW <- function(x, y, z){
   #1
   #library(afex)
-  (summary(aov(z~x*y, data=Data)))
+  (summary(aov(z~x*y, RTDATA)))
 }
 
 
