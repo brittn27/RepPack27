@@ -13,6 +13,9 @@
 #' x <- Data$IV1
 #' y <- Data$IV2
 #' z <- Data$DV
+#' OriginalData <- Data
+#' LeysOutlier(x,y,z)
+#' NewData # This should get you your new dataset
 #'
 #'
 LeysOutlier <- function(x, y, z){
