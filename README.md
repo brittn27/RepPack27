@@ -48,12 +48,6 @@ Data <- RTDATA
 library(RepPack27)
 ## basic example code  of summary --
 
-?ANOVA2_BW()
-
-x <- RTDATA$difficulty
-y <- RTDATA$depth
-z <- RTDATA$RT
-#Data <- RTDATA
 summary(Data)
 #>    Picture          difficulty  depth        side     elevation  participant
 #>  Length:672         18:112     far :336   left :336   down:336   01:672     
@@ -73,6 +67,13 @@ summary(Data)
 
 ``` r
 # and then an ANOVA
+
+?ANOVA2_BW()
+
+x <- RTDATA$difficulty
+y <- RTDATA$depth
+z <- RTDATA$RT
+
 ANOVA2_BW(x,y,z)
 #>              Df Sum Sq Mean Sq F value   Pr(>F)    
 #> x             5   4.18  0.8370  12.547 1.18e-11 ***
