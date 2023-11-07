@@ -8,11 +8,19 @@
 \description{
 This package was created with the intention of cleaning data from psychopy to make future analysis easier.
 
-This package was created for the course Github 712 to demonstrate
+It was also created for the course Github 712 to demonstrate
 an example for how to create one relevant to my present research.
 }
 \references{
 \url{https://github.com/brittn27/RepPack27}
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/brittn27/RepPack27}
+  \item Report bugs at \url{https://github.com/brittn27/RepPack27/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Noah Britt \email{brittn@mcmaster.ca} (\href{https://orcid.org/0000-0001-5020-4528}{ORCID})

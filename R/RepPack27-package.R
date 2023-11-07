@@ -8,11 +8,14 @@
 #'
 #' It was also created for the course Github 712 to demonstrate
 #' an example for how to create one relevant to my present research.
+#' Outlier Analysis using Leys 2013 method.
 #'
 #' @docType package
 #' @name RepPack27-package
 #' @author Noah Britt, Department of Psychology, Neuroscience, and Behaviour, McMaster University \email{brittn@@mcmaster.ca}
 #' @references \url{https://github.com/brittn27/RepPack27}
+#' Leys, 2013.
+#'
 
 ## usethis namespace: end
 NULL
