@@ -10,6 +10,7 @@
 #' @export
 #' @examples
 #' # example code
+#' install.packages("afex")
 #' x <- Data$IV1
 #' y <- Data$IV2
 #' z <- Data$DV
@@ -20,20 +21,8 @@
 #'
 LeysOutlier <- function(x, y, z){
   #1
-  OldData <- subset(OriginalData,
-                         select=c(x,y,z))
-
-  Q75_5<-as.numeric(quantile(OldData$z)[4])
-  b5 = 1/Q75_5
-
-  MAD5<-mad(OldData$z, center = median(OldData$z), constant = b5, na.rm = TRUE,
-            low = FALSE, high = FALSE)
-
-  low_cutoff5 <- median(OldData$z)-(3*MAD5)
-  high_cutoff5 <- median(OldData$z)+(3*MAD5)
-
-  NewData <- subset(OldData, OldData$z> low_cutoff5 & OldData$z < high_cutoff5)
-
+  library(afex)
+  return(nice(ov_car(z~x*y, data=Data)),es='pes')
 }
 
 
