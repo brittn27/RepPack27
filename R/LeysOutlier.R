@@ -3,10 +3,11 @@
 #' This method assumes two independent variables and a single dependent variable.
 #'
 #'
-#' param x An independent variable
-#' param y Another independent variable
-#' param z the dependent variable
-#' export
+#' @param x An independent variable
+#' @param y Another independent variable
+#' @param z the dependent variable
+#' @return The outlier method of \code{x} and \code{y} and \code{z}
+#' @export
 #' @examples
 #' # example code
 #' x <- Data$IV1

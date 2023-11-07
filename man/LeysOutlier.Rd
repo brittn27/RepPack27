@@ -7,11 +7,19 @@ This method assumes two independent variables and a single dependent variable.}
 \usage{
 LeysOutlier(x, y, z)
 }
+\arguments{
+\item{x}{An independent variable}
+
+\item{y}{Another independent variable}
+
+\item{z}{the dependent variable}
+}
+\value{
+The outlier method of \code{x} and \code{y} and \code{z}
+}
 \description{
-param x An independent variable
-param y Another independent variable
-param z the dependent variable
-export
+remove data for RT outside the median absolute deviation method.
+This method assumes two independent variables and a single dependent variable.
 }
 \examples{
 # example code
