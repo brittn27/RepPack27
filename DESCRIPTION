@@ -1,0 +1,14 @@
+Package: RepPack27
+Title: Noah's Package for Github 712
+Version: 0.0.0.9000
+Authors@R: 
+    person("Noah", "Britt", , "brittn@mcmaster.ca", role = c("aut", "cre"),
+           comment = c(ORCID = "https://orcid.org/0000-0001-5020-4528"))
+Description: This package was created with the intention of cleaning data from psychopy to make future analysis easier.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 2.10)
+LazyData: true
