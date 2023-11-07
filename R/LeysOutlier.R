@@ -34,7 +34,7 @@ LeysOutlier <- function(x, y, z){
 
   NewData <- subset(OldData, OldData$z> low_cutoff5 & OldData$z < high_cutoff5)
   write.csv(NewData,"PostOutlierRT.csv")
-  Good_Data <- read.csv("PostOutlierRT.csv")
+  Good_Data <- read.csv("PostOutlierRT.csv",sep=",")
 }
 
 
