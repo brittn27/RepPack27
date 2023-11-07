@@ -85,9 +85,15 @@
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="va">RTDATA</span><span class="op">$</span><span class="va">difficulty</span></span></span>
 <span class="r-in"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">RTDATA</span><span class="op">$</span><span class="va">depth</span></span></span>
 <span class="r-in"><span><span class="va">z</span> <span class="op">&lt;-</span> <span class="va">RTDATA</span><span class="op">$</span><span class="va">RT</span></span></span>
-<span class="r-in"><span><span class="va">Data</span><span class="op">&lt;-</span> <span class="va">RTDATA</span></span></span>
+<span class="r-in"><span><span class="co"># Ensure your df is named 'RTDATA'</span></span></span>
 <span class="r-in"><span><span class="fu">ANOVA2_BW</span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span>,<span class="va">z</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in ANOVA2_BW(x, y, z):</span> object 'Data' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> x             5   4.18  0.8370  12.547 1.18e-11 ***</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> y             1   0.14  0.1383   2.073    0.150    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> x:y           5   0.27  0.0546   0.818    0.537    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Residuals   660  44.03  0.0667                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ---</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
