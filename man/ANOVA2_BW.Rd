@@ -4,7 +4,7 @@
 \alias{ANOVA2_BW}
 \title{This method assumes two independent variables and a single dependent variable.}
 \usage{
-ANOVA2_BW(x, y, z, ID)
+ANOVA2_BW(x, y, z)
 }
 \arguments{
 \item{x}{An independent variable}

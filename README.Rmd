@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 The goal of RepPack27 is to be able to apply a simple between-subjects ANOVA (two-way) simply by using the 
-LeysOutlier function. The following will show an example using the 'RTDATA' built in dataset.
+ANOVA2_BW() function. The following will show an example using the 'RTDATA' built in dataset.
 
 ## Installation
 
@@ -36,21 +36,29 @@ remotes::install_github("brittn27/RepPack27")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
-library(RepPack27)
-## basic example code --
-
+```{r load data}
 data(RTDATA)
 summary(RTDATA)
+Data <- RTDATA
 
-#?LeysOutlier
+```
+
+```{r example}
+library(RepPack27)
+## basic example code  of summary --
+
+?ANOVA2_BW()
 
 x <- RTDATA$difficulty
 y <- RTDATA$depth
 z <- RTDATA$RT
-Data<- RTDATA
+Data <- RTDATA
+summary(Data)
 
-LeysOutlier(x,y,z)
+# and then an ANOVA
+ANOVA2_BW(x,y,z)
+
+
 ```
 
 

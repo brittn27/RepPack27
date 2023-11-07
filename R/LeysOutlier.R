@@ -18,7 +18,7 @@
 #' Data<- RTDATA
 #' ANOVA2_BW(x,y,z)
 #'
-ANOVA2_BW <- function(x, y, z, ID){
+ANOVA2_BW <- function(x, y, z){
   #1
   #library(afex)
   (summary(aov(z~x*y, data=Data)))

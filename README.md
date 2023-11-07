@@ -6,14 +6,18 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of RepPack27 is to …
+The goal of RepPack27 is to be able to apply a simple between-subjects
+ANOVA (two-way) simply by using the ANOVA2_BW() function. The following
+will show an example using the ‘RTDATA’ built in dataset.
 
 ## Installation
 
 You can install the development version of RepPack27 like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# This is how you can install the package:
+
+remotes::install_github("brittn27/RepPack27")
 ```
 
 ## Example
@@ -21,22 +25,48 @@ You can install the development version of RepPack27 like so:
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(RepPack27)
-## basic example code
+data(RTDATA)
+summary(RTDATA)
+#>    Picture          difficulty  depth        side     elevation  participant
+#>  Length:672         18:112     far :336   left :336   down:336   01:672     
+#>  Class :character   22:112     near:336   right:336   up  :336              
+#>  Mode  :character   26:112                                                  
+#>                     34:112                                                  
+#>                     38:112                                                  
+#>                     42:112                                                  
+#>        RT         Correct
+#>  Min.   :0.3541   0: 13  
+#>  1st Qu.:0.6167   1:659  
+#>  Median :0.7040          
+#>  Mean   :0.7758          
+#>  3rd Qu.:0.8467          
+#>  Max.   :3.5806
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+library(RepPack27)
+## basic example code --
+
+x <- RTDATA$difficulty
+y <- RTDATA$depth
+z <- RTDATA$RT
+Data <- RTDATA
+Data=RTDATA
+summary(Data)
+#>    Picture          difficulty  depth        side     elevation  participant
+#>  Length:672         18:112     far :336   left :336   down:336   01:672     
+#>  Class :character   22:112     near:336   right:336   up  :336              
+#>  Mode  :character   26:112                                                  
+#>                     34:112                                                  
+#>                     38:112                                                  
+#>                     42:112                                                  
+#>        RT         Correct
+#>  Min.   :0.3541   0: 13  
+#>  1st Qu.:0.6167   1:659  
+#>  Median :0.7040          
+#>  Mean   :0.7758          
+#>  3rd Qu.:0.8467          
+#>  Max.   :3.5806
 ```
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`
