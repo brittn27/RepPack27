@@ -29,6 +29,7 @@ You can install the development version of RepPack27 like so:
 # This is how you can install the package:
 
 remotes::install_github("brittn27/RepPack27")
+library(RepPack27)
 
 ```
 
@@ -37,6 +38,7 @@ remotes::install_github("brittn27/RepPack27")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r load data}
+library(RepPack27)
 data(RTDATA)
 summary(RTDATA)
 Data <- RTDATA

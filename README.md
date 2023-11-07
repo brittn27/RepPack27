@@ -18,6 +18,7 @@ You can install the development version of RepPack27 like so:
 # This is how you can install the package:
 
 remotes::install_github("brittn27/RepPack27")
+library(RepPack27)
 ```
 
 ## Example
@@ -25,6 +26,7 @@ remotes::install_github("brittn27/RepPack27")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
+library(RepPack27)
 data(RTDATA)
 summary(RTDATA)
 #>    Picture          difficulty  depth        side     elevation  participant
