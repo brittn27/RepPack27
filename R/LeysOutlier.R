@@ -33,6 +33,8 @@ LeysOutlier <- function(x, y, z){
   high_cutoff5 <- median(OldData$z)+(3*MAD5)
 
   NewData <- subset(OldData, OldData$z> low_cutoff5 & OldData$z < high_cutoff5)
+  write.csv(NewData,"PostOutlierRT.csv")
+  Good_Data <- read.csv("PostOutlier.csv")
 }
 
 
