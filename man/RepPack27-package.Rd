@@ -10,9 +10,11 @@ This package was created with the intention of cleaning data from psychopy to ma
 
 It was also created for the course Github 712 to demonstrate
 an example for how to create one relevant to my present research.
+Outlier Analysis using Leys 2013 method.
 }
 \references{
 \url{https://github.com/brittn27/RepPack27}
+Leys, 2013.
 }
 \seealso{
 Useful links:
