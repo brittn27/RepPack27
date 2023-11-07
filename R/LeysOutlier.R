@@ -21,8 +21,8 @@
 #'
 LeysOutlier <- function(x, y, z, ID){
   #1
-  library(afex)
-  (nice(aov_car(z~x*y, data=Data),es='pes'))
+  #library(afex)
+  (nice(aov(z~x*y, data=Data),es='pes'))
 }
 
 
