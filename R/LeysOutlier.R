@@ -14,16 +14,15 @@
 #' x <- Data$IV1
 #' y <- Data$IV2
 #' z <- Data$DV
-#' ID <- Data$ID
 #' OriginalData <- Data
-#' LeysOutlier(x,y,z,ID)
+#' LeysOutlier(x,y,z)
 #' NewData # This should get you your new dataset
 #'
 #'
 LeysOutlier <- function(x, y, z, ID){
   #1
   library(afex)
-  return(nice(aov_car(z~x*y+Error(ID/(x*y)), data=Data)),es='pes')
+  (nice(aov_car(z~x*y, data=Data),es='pes'))
 }
 
 
