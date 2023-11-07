@@ -1,25 +1,24 @@
-# Outlier Method by Leys et al. (2013)
-#' remove data for RT outside the median absolute deviation method.
+# Run a typical two-way between-subjects ANOVA on a single Independent Variables.
+#'
 #' This method assumes two independent variables and a single dependent variable.
 #'
 #'
 #' @param x An independent variable
 #' @param y Another independent variable
 #' @param z the dependent variable
-#' @return The outlier method of \code{x} and \code{y} and \code{z}
+#' @return The resulting ANOVA from \code{x} and \code{y} and \code{z}
 #' @export
 #' @examples
-#' # example code
-#' install.packages("afex")
-#' x <- Data$IV1
-#' y <- Data$IV2
-#' z <- Data$DV
-#' OriginalData <- Data
-#' LeysOutlier(x,y,z)
-#' NewData # This should get you your new dataset
+#' remotes::install_github("brittn27/RepPack27")
+#' library(RepPack27)
+#' data(RTDATA)
+#' x <- RTDATA$difficulty
+#' y <- RTDATA$depth
+#' z <- RTDATA$RT
+#' Data<- RTDATA
+#' ANOVA2_BW(x,y,z)
 #'
-#'
-LeysOutlier <- function(x, y, z, ID){
+ANOVA2_BW <- function(x, y, z, ID){
   #1
   #library(afex)
   (summary(aov(z~x*y, data=Data)))

@@ -18,14 +18,18 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of RepPack27 is to ...
+The goal of RepPack27 is to be able to apply a simple between-subjects ANOVA (two-way) simply by using the 
+LeysOutlier function. The following will show an example using the 'RTDATA' built in dataset.
 
 ## Installation
 
 You can install the development version of RepPack27 like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# This is how you can install the package:
+
+remotes::install_github("brittn27/RepPack27")
+
 ```
 
 ## Example
@@ -35,20 +39,27 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 library(RepPack27)
 ## basic example code
+
+data(RTDATA)
+summary(RTDATA)
+
+#?LeysOutlier
+
+x <- RTDATA$difficulty
+y <- RTDATA$depth
+z <- RTDATA$RT
+Data<- RTDATA
+
+LeysOutlier(x,y,z)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
 
 You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
 
 You can also embed plots, for example:
 
 ```{r pressure, echo = FALSE}
-plot(pressure)
+plot(RT~difficulty,Data)
 ```
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
