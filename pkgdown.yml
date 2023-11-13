@@ -2,6 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
+  RepPack27-vignette: RepPack27-vignette.html
   Vignette_Nov13: Vignette_Nov13.html
-last_built: 2023-11-13T23:15Z
+last_built: 2023-11-13T23:30Z
 
