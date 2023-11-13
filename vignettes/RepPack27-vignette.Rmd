@@ -1,0 +1,81 @@
+---
+title: "RepPack27-vignette"
+output: rmarkdown::html_vignette
+abstract: An important element of reproducible research is documenting all steps of the process, including data analysis. This vignette, developed for the `RepPack27` package (an example of ANOVA for 2-way between-subjects on RT data)..
+keywords: R packages; reproducible research; data analysis
+vignette: >
+  %\VignetteIndexEntry{RepPack27-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+
+This vignette illustrate the use of the dataset and utility functions included in the package `RepPack27`. I collected this data to look at differences in RT when observing target localization across 3-D space in a virtual world. The objective of this data is to observe a depth effect across various conditions. These conditions can appear more or less difficult which may prioritize attention or perception differently across near and far space (i.e., evident through RT differences)
+
+## Preliminaries
+
+Load the packages used in this vignette:
+
+```{r setup}
+library(RepPack27)
+```
+
+
+## Loading the data
+
+To load the data, use the function `data()`:
+```{r load-data}
+data("RTDATA")
+```
+
+To inspect the dataframe, use the function `summary()`
+```{r summary-data}
+summary(RTDATA)
+```
+
+The data frame consists of 10 variables. The variable definitions can be consulted in the help file:
+```{r call-help}
+?RTDATA
+```
+
+## Are population and oil consumption related?
+
+The dataframe includes information for RT per trial depending on the depth the lines were presented (near or far) but also based on the orientation difficulty (3 levels of difficulty that are categorized by individual orientations: 18,22,26,34,38,42; these were all compared to a reference of 30). We can plot generally RT patterns across all 6 orientations.We create a simple boxplot `x = difficulty` which is meant to summarize difficulty and `y = RT` for the reaction times:
+```{r energy-by-population}
+# Simple Boxplot observing RT differences across the 6 difficulty levels (orientation)
+
+plot(RT~difficulty,RTDATA)
+```
+
+Not suprisingly, RTs are largest (slowest) for the middle difficulties which are the most difficult. Orientations 26 and 34 are closest to the reference 30 which makes it most difficult to discriminate.
+
+Check the descriptive statistics of RT data across Depth and Difficulty:
+```{r summary-epc}
+#This will get us a summary of RT across difficulty and depth in seconds.
+with(RTDATA, tapply(RT, list(difficulty,depth),mean))
+```
+
+
+Now we can compute an ANOVA to observe the effect across the two independent variables (depth, difficulty; x,y) on our dependent variable (RT; z):
+```{r}
+?ANOVA2_BW
+
+x <- RTDATA$difficulty
+y <- RTDATA$depth
+z <- RTDATA$RT
+
+ANOVA2_BW(x,y,z)
+
+```
+
+This analysis showed us for RT, there was a significant main effect of difficulty; harder orientations were slower than easier orientations. There was no main effect of target depth, however this will likely become significant with increased sample size. Important to remember this remains just a small subset of the overall data.
+
+
